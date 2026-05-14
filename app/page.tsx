@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import TrustSignals from '@/components/TrustSignals';
 import Services from '@/components/Services';
+import MedicalSupport from '@/components/MedicalSupport';
 import ClientResults from '@/components/ClientResults';
 import About from '@/components/About';
 import Pricing from '@/components/Pricing';
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <TrustSignals />
         <Services />
+        <MedicalSupport />
         <ClientResults />
         <About />
         <Pricing />

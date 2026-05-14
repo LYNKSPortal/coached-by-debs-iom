@@ -1,9 +1,23 @@
 'use client';
 
-import { Laptop, Dumbbell, Zap, ArrowRight } from 'lucide-react';
+import { Laptop, Dumbbell, Zap, Sun, ArrowRight } from 'lucide-react';
 
 export default function Pricing() {
   const packages = [
+    {
+      icon: Sun,
+      name: '8-Week Summer Program',
+      description: 'Get holiday-ready with our intensive summer transformation program',
+      features: [
+        '8 weeks of structured training',
+        'Summer-focused nutrition plan',
+        'Weekly progress tracking',
+        'Group support & accountability',
+        'Beach body confidence boost'
+      ],
+      highlight: false,
+      badge: 'Limited Time'
+    },
     {
       icon: Laptop,
       name: 'Online Coaching',
@@ -57,16 +71,24 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {packages.map((pkg, index) => (
             <div 
               key={index}
-              className={`rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 ${
+              className={`relative rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 ${
                 pkg.highlight 
                   ? 'bg-gold border-2 border-gold-dark shadow-2xl' 
                   : 'bg-black border border-gold/30 hover:border-gold'
               }`}
             >
+              {pkg.badge && (
+                <div className="absolute top-4 right-4">
+                  <span className="bg-gold text-black text-xs font-bold px-3 py-1 rounded-full">
+                    {pkg.badge}
+                  </span>
+                </div>
+              )}
+              
               <div className="flex justify-center mb-6">
                 <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${
                   pkg.highlight ? 'bg-black' : 'bg-gold'
